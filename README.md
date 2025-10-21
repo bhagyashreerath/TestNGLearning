@@ -31,7 +31,7 @@ mvn test
 - [ ] Implement data-driven tests (CSV/Excel/JSON)
 - [ ] Parameterize browsers and environments
 - [ ] Add more test coverage and negative test cases
-- [ ] Create a git repo and push the code
+- [x] Create a git repo and push the code
 
 
 
