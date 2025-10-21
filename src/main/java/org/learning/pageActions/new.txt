@@ -1,0 +1,82 @@
+String name = "gudly";
+
+    WebElement userName=driver.findElement(By.id("inputUsername"));
+        userName.sendKeys(name);
+        WebElement password=driver.findElement(By.name("inputPassword"));
+        password.sendKeys("rahul");
+        WebElement signIn=driver.findElement(By.xpath("//button[text()='Sign In']"));
+        signIn.click();
+        WebElement errorTxt=driver.findElement(By.xpath("//p[@class='error']"));
+        String error=errorTxt.getText();
+        System.out.println(error);
+        WebElement forgotPassword=driver.findElement(By.xpath("//a[text()='Forgot your password?']"));
+        forgotPassword.click();
+        WebElement fuserName=driver.findElement(By.xpath("//input[@placeholder='Name']"));
+        fuserName.sendKeys(name);
+        WebElement femail=driver.findElement(By.xpath("//input[@placeholder='Email']"));
+        femail.sendKeys("b@test.com");
+        WebElement fphoneNo=driver.findElement(By.xpath("//input[@placeholder='Phone Number']"));
+        fphoneNo.sendKeys("123456789");
+//      Thread.sleep(1000);
+        WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(10));
+
+        WebElement resetPwdBtn=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='reset-pwd-btn']")));
+
+        resetPwdBtn.click();
+        String newPassword=recoverPassword(driver);
+        WebElement recoveryTxt=driver.findElement(By.xpath("//p[@class='infoMsg']"));
+        String recoveryTxtN=recoveryTxt.getText();
+        System.out.println(recoveryTxtN);
+        WebElement gotoLogin=driver.findElement(By.xpath("//button[@class='go-to-login-btn']"));
+        gotoLogin.click();
+        Thread.sleep(1000);
+//        driver.navigate().refresh();
+        userName = driver.findElement(By.id("inputUsername"));
+        password = driver.findElement(By.name("inputPassword"));
+
+        userName.sendKeys(name);
+        password.sendKeys(newPassword);
+
+        WebElement chkboxOne=driver.findElement(By.id("chkboxOne"));
+        wait.until(ExpectedConditions.elementToBeClickable(chkboxOne));
+        chkboxOne.click();
+        WebElement chkboxTwo=driver.findElement(By.id("chkboxTwo"));
+        chkboxTwo.click();        Thread.sleep(2000);
+        signIn=driver.findElement(By.xpath("//button[text()='Sign In']"));
+        signIn.click();
+        Thread.sleep(2000);
+        WebElement pageTxt=driver.findElement(By.xpath("//p"));
+        String pageTxtN=pageTxt.getText();
+        System.out.println(pageTxtN);
+        Assert.assertEquals(pageTxtN,"You are successfully logged in.");
+        WebElement pageTxt2=driver.findElement(By.xpath("//h2"));
+        String pageTxt2N=pageTxt2.getText();
+        System.out.println(pageTxt2N);
+        Assert.assertEquals(pageTxt2N,"Hello "+name+",");
+        WebElement logOut= driver.findElement(By.xpath("//button[text()='Log Out']"));
+        logOut.click();
+//        try {
+//            Thread.sleep(10000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+        driver.quit();
+
+    }
+
+    public static String recoverPassword(WebDriver driver) {
+        driver.get("https://rahulshettyacademy.com/locatorspractice/");
+        WebElement forgotPassword=driver.findElement(By.xpath("//a[text()='Forgot your password?']"));
+        forgotPassword.click();
+        WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebElement resetPwdBtn=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='reset-pwd-btn']")));
+        resetPwdBtn.click();
+        WebElement recoveryTxt=driver.findElement(By.xpath("//p[@class='infoMsg']"));
+        String recoveryTxtN=recoveryTxt.getText();
+        String newPassword= recoveryTxtN.split("'")[1];
+        System.out.println(newPassword);
+        return  newPassword;
+    }
+}
+
+}
