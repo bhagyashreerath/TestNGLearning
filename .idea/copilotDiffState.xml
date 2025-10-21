@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/README.md">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/README.md" />
+              <option name="updatedContent" value="# TestNGLearning&#10;&#10;Simple TestNG + Selenium learning project (Java, Maven) containing basic page objects, actions and a sample test.&#10;&#10;## Overview&#10;This repository demonstrates a small test automation structure using:&#10;- Java&#10;- Maven&#10;- TestNG&#10;- Selenium WebDriver (page objects + actions)&#10;&#10;## Prerequisites&#10;- JDK 8+ installed&#10;- Maven installed&#10;&#10;## Build and run tests&#10;From the project root run:&#10;&#10;mvn test&#10;&#10;(Adjust browser drivers or WebDriver setup as needed in src/main/java/org/learning/managers/WebDriverManager.java)&#10;&#10;## Project structure&#10;- src/main/java: page objects, actions and manager classes&#10;- src/test/java: TestNG tests&#10;&#10;## TODO&#10;- [ ] Add CI workflow (GitHub Actions) to run tests on push&#10;- [ ] Parameterize browsers and environments&#10;- [ ] Add explicit logging and reporting (Allure / ExtentReports)&#10;- [ ] Improve README with examples and badges&#10;- [ ] Add more test coverage and negative test cases&#10;&#10;&#10;&#10;---&#10;Generated on: 2025-10-19&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
