@@ -24,5 +24,8 @@ public class RahulShettyPageAction {
         String error = rahulShettyPageObjects.errorText.getText();
         System.out.println(error);
     }
+    public void visitUs(){
+        rahulShettyPageObjects.visitUsButton.click();
+    }
 }
 

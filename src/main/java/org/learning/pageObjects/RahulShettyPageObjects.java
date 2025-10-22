@@ -21,5 +21,6 @@ public class RahulShettyPageObjects {
     public WebElement signInButton;
      @FindBy(xpath = "//p[@class='error']")
     public WebElement errorText;
-
+@FindBy(id="visitUsTwo")
+    public WebElement visitUsButton;
 }
