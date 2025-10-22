@@ -28,7 +28,7 @@ public class RahulShettyPageAction {
     public void visitUs(){
         rahulShettyPageObjects.visitUsButton.click();
     }
-}
+
 
     public void setForgotPassword(String name) {
         rahulShettyPageObjects.forgotPassword.click();
