@@ -25,9 +25,7 @@ public class RahulShettyPageAction {
         String error = rahulShettyPageObjects.errorText.getText();
         System.out.println(error);
     }
-    public void visitUs(){
-        rahulShettyPageObjects.visitUsButton.click();
-    }
+
 
 
     public void setForgotPassword(String name) {
@@ -39,6 +37,10 @@ public class RahulShettyPageAction {
         rahulShettyPageObjects.resetPwdBtn.click();
 
     }
+    public void visitUs(){
+        rahulShettyPageObjects.visitUsButton.click();
+    }
+
 
 
 
