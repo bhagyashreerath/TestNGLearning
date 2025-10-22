@@ -4,6 +4,7 @@ import org.learning.managers.WebDriverManager;
 import org.learning.pageObjects.GuruPageObjects;
 import org.learning.pageObjects.RahulShettyPageObjects;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -24,5 +25,20 @@ public class RahulShettyPageAction {
         String error = rahulShettyPageObjects.errorText.getText();
         System.out.println(error);
     }
+
+    public void setForgotPassword(String name) {
+        rahulShettyPageObjects.forgotPassword.click();
+        rahulShettyPageObjects.fuserName.sendKeys(name);
+        rahulShettyPageObjects.femail.sendKeys("b@test.com");
+        rahulShettyPageObjects.fphoneNo.sendKeys("123456789");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        rahulShettyPageObjects.resetPwdBtn.click();
+
+    }
+
+
+
+
 }
+
 
