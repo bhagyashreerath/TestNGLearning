@@ -26,6 +26,8 @@ public class RahulShettyPageAction {
         System.out.println(error);
     }
 
+
+
     public void setForgotPassword(String name) {
         rahulShettyPageObjects.forgotPassword.click();
         rahulShettyPageObjects.fuserName.sendKeys(name);
@@ -35,6 +37,10 @@ public class RahulShettyPageAction {
         rahulShettyPageObjects.resetPwdBtn.click();
 
     }
+    public void visitUs(){
+        rahulShettyPageObjects.visitUsButton.click();
+    }
+
 
 
 
