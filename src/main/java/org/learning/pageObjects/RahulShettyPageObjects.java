@@ -21,6 +21,9 @@ public class RahulShettyPageObjects {
     public WebElement signInButton;
      @FindBy(xpath = "//p[@class='error']")
     public WebElement errorText;
+@FindBy(id="visitUsTwo")
+    public WebElement visitUsButton;
+}
     @FindBy (xpath = "//a[text()='Forgot your password?']")
         public WebElement forgotPassword;
     @FindBy(xpath = "//input[@placeholder='Name']")
