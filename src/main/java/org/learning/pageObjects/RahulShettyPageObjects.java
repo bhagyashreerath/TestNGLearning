@@ -21,5 +21,14 @@ public class RahulShettyPageObjects {
     public WebElement signInButton;
      @FindBy(xpath = "//p[@class='error']")
     public WebElement errorText;
+    @FindBy (xpath = "//a[text()='Forgot your password?']")
+        public WebElement forgotPassword;
+    @FindBy(xpath = "//input[@placeholder='Name']")
+    public WebElement fuserName;
+    @FindBy (xpath = "//input[@placeholder='Email']")
+    public WebElement femail;
+    @FindBy (xpath = "//input[@placeholder='Phone Number']")
+    public WebElement fphoneNo;
+    @FindBy (xpath = "//button[@class='reset-pwd-btn']")
+    public WebElement resetPwdBtn;
 
-}
